@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro&display=swap');
+
+:root {
+    --color-main: rgb(139, 63, 139);
+    --color-main-dark: rgb(105, 16, 83);
+    --color-main-light: rgb(211, 125, 190);
+    --font-main: 'Source Sans Pro', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-main);
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ----------------NAVIGATION--------------- */
+
+.nav-bar {
+    width: 100%;
+    /* position: fixed;
+    display: block; */
+    z-index: 9999;
+    background-color: var(--color-main);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.nav-item {
+    padding: 0px 20px;
+    font-size: 1.1rem;
+    height: 100%;
+}
+
+/* .nav-item::before {
+} */
+
+.nav-item:hover {
+    background-color: var(--color-main-dark);
+    border-radius: 10px;
+}
+
+.nav-item:hover a i {
+    color: var(--color-main-light);
+}
+
+.nav-item a {
+    display: inline-block;
+    padding: 5px 0px;
+    color: white;
+}
+
+.nav-item a i {
+    padding-left: 8px;
+    font-size: 0.95rem;
+
+}
+
+
+.nav-logo {
+    padding: 0px 20px;
+    
+}
+
+.nav-logo a {
+    color: white;
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+    font-family: var(--font-secondary);
+}
+
+
+
+/* ---------------SPLASH SECTION------------------- */
+
+.splash-container {
+    color: white;
+    width: 1200px;
+    height: 250px;
+    background-image: url("https://picsum.photos/id/1027/1200/300?grayscale");
+    background-repeat: no-repeat;
+}
+
+.splash-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.splash-logo {
+    padding-top: 10px;
+    align-self: flex-start;
+}
+
+.splash-logo h1 {
+    font-family: var(--font-secondary);
+    font-size: 4rem;
+}
+
+.splash-text {
+    align-self: center;
+}
+
+.splash-text h3 {
+    font-size: 2rem;
+}
+
+
+/* ------------------PRODUCTS SECTION--------------------- */
+
+
+.products {
+    padding: 5rem;
+}
+
+.products h1 {
+    color: var(--color-main);
+    font-family: var(--font-secondary);
+    text-align: center;
+    padding-bottom: 4rem;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: black;
+    text-decoration-style: dashed;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, auto);
+    gap: 20px;
+    /* background-image: url("https://picsum.photos/200" );
+    background-repeat: no-repeat; */
+}
+
+.product{
+    /* width: 100%; */
+    background-image: url("https://picsum.photos/200/200?grayscale" );
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 1fr .6fr;
+    color: white;
+    
+
+
+}  
+
+.product-top h3 {
+    /* font-family: var(--font-secondary); */
+    font-size: 1.75rem;
+    color: white;
+    text-shadow: 0px 0px 5px var(--color-main-light);
+    /* text-shadow: 1px 0 2px black, 0 -1px 2px black, -1px 0 2px black, 0 1px 2px black; */
+    /* color: white;
+    text-shadow: 0px 0px 5px var(--color-main-dark); */
+}
+.product-bot {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 10px;
+
+}
+
+
+.product-bot-text p{
+    color: var(--color-main-light);
+    font-family: var(--font-secondary);
+    position: absolute;
+    height: 100%;
+    /* background-color: rgb(105, 16, 83, 0.5); */
+    background-color: rgb(0,0,0, 0.75);
+    font-size: 0.85rem;
+    left: -200%;
+    transition: all .3s ease-in
+}
+.product:hover .product-bot-text p {
+    left: 0;
+}
+
+
+
+
+/* Working but grows doesnt slide in
+.product-bot-text {
+    position: absolute;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+    padding: 10px 10px;
+    font-size: 0.85rem;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform .25s ease-out;
+}
+.product:hover .product-bot-text {
+    transform: scaleY(1);
+} */
+
+
+
+
+
+
+
+
+/* ------------------BIRDS SECTION------------------- */
+
+.main {
+    width:100%;
+    padding: 3rem;
+}
+
+
+.main-title {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-decoration-color: var(--color-main);
+    text-align: center;
+    margin-bottom: 2rem;
+    /* background-color: var(--color-main-light); */
+
+
+}
+
+/* .main-title h1{
+    font-family: var(--font-secondary);
+    
+} */
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    /* grid-template-areas: "i-left content content i-right"; */
+    grid-template-areas: "left content right";
+    gap: 1rem;
+}
+
+/* .icon-left  {grid-area: i-left}
+.icon-right {grid-area: i-right} */
+.left {grid-area: left}
+.flip {grid-area: right}
+.content    {grid-area: content}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-main);
+    border-radius: 5rem;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    /* flex-wrap: wrap; */
+}
+
+.sides {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .left {
+    justify-self: flex-end;
+} */
+.side {
+    /* width: 100%; */
+    font-size: 7rem;
+    color: black;
+    opacity: 0.65;
+}
+
+.flip {
+    transform:scaleX(-1);
+}
+
+
+.content h2 {
+    padding-bottom: 1rem;
+    /* font-family: var(--font-secondary); */
+}
+/* 
+.content p {
+    padding: 0px 20px;
+} */
+
+
+
+
+.icon-left::before {
+    /* position: absolute; */
+    color: var(--color-main);
+    font-size: 200px;
+    opacity: 0.4;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    content: "\f4ba";
+}
+.icon-right::before {
+    /* position: absolute; */
+    display: block;
+    color: var(--color-main);
+    font-size: 200px;
+    opacity: 0.4;
+
+    transform: scaleX(-1);
+
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    content: "\f4ba";
+}
+
+
+
+/* .icon-section {
+    padding: 50px 100px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+} */
+
+
+/* .icon-test {
+    padding:10px;
+    height: 200px;
+    position: relative;
+}
+
+.icon-test::before {
+    position: absolute;
+    color: rgb(105, 16, 83);
+    font-size: 200px;
+    opacity: 0.4;
+
+    transform: scaleX(-1);
+
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    content: "\f4ba";
+} */
+
+
+/* .icon-test {
+    color: white;
+    font-size: 1.2rem;
+    background-color: rgb(255, 192, 239);
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20%;
+}
+
+.icon-test i {
+    color: rgb(105, 16, 83);
+    font-size: 200px;
+    opacity: 0.4;
+    position: absolute;
+} */
+
+.layer {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    width: 100%;
+    height : 50%;
+    background-color: black;
+    opacity: .5;
+}
+
+
